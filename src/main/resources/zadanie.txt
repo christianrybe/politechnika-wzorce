@@ -1,0 +1,13 @@
+1. Dyrekcja zauważyła, że nasza implementacja ptaków jest mało porywająca dla odwiedzających. Ptaki są niewidoczne,
+bo nie mamy metody, które by je wyświetlała. Stwórz metodę void display(), która będzie wyświetlała w linii poleceń
+identyfikujący tekst, np. "Im a duck".
+
+2. Pojawiła się potrzeba stworzenia maskotki ptaka dla najmłodszych gości zoo. Stwórz klasę ToyBird, która będzie
+reprezentowała zabawkę dla dzieci.
+
+3. Okazuje się, że zasady BHP nie pozwalają rozdawać dzieciom latających zabawek (klasa ToyBird rozszerzając klasę Bird)
+implementuje metodę int fly();
+
+Pozbądź się teraz dziedziczenia w hierachii Bird (zamień klasę abstrakcyjną na interfejs usuwając niepotrzebne już pola
+i deklaracje @Override).Duck i Goose powinny teraz implementować interfejs Bird.
+
