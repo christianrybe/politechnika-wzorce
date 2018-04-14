@@ -13,10 +13,6 @@ public class BlackBear extends Bear {
         super(weight);
     }
 
-    public BlackBear(int weight, Database database) {
-        super(weight, database);
-    }
-
     @Override
     public void setWeight(int weight) {
         super.setWeight(2 * weight);

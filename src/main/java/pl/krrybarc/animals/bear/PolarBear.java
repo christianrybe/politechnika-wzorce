@@ -2,11 +2,6 @@ package pl.krrybarc.animals.bear;
 
 public class PolarBear extends Bear {
 
-    //DO NOT DO THIS AT HOME OR AT WORK
-    //or you might get fired - public field
-    public int a;
-    public static int b;
-
     public PolarBear(int weight) {
         super(weight);
     }

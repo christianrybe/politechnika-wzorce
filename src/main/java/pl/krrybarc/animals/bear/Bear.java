@@ -30,10 +30,7 @@ public abstract class Bear implements Animal {
         this.clock = clock;
     }
 
-    public Bear(int weight, Database database) {
-        this(weight);
-        this.database = database;
-    }
+    //<dependency-injection>
 
     @Override
     public boolean isAlive() {
