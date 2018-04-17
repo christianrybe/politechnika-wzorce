@@ -8,7 +8,6 @@ import pl.krrybarc.clock.Clock;
 import pl.krrybarc.clock.DateTimeClock;
 import pl.krrybarc.database.Database;
 import pl.krrybarc.database.SQLDatabase;
-import pl.krrybarc.exception.TooFastException;
 
 
 public abstract class Bear implements Animal {
@@ -20,14 +19,8 @@ public abstract class Bear implements Animal {
 
     public Bear(int weight) {
         this.weight = weight;
-        this.clock = new DateTimeClock();
         this.lastMealDate = clock.getCurrentTime();
         this.database = new SQLDatabase();
-    }
-
-    public Bear(int weight, Clock clock) {
-        this(weight);
-        this.clock = clock;
     }
 
     //<dependency-injection>
@@ -38,7 +31,7 @@ public abstract class Bear implements Animal {
                 .isShorterThan(Duration.standardDays(10));
     }
 
-    public void eat(Bird bird) throws TooFastException {
+    public void eat(Bird bird) {
         lastMealDate = clock.getCurrentTime();
         database.save(lastMealDate);
     }
