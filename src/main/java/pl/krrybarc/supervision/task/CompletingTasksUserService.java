@@ -6,7 +6,6 @@ public class CompletingTasksUserService extends UserService {
 
     private TaskService taskService;
 
-    @Override
     public void finalizeTasks(int userId) {
         taskService.getAllTasksForUser(userId)
                    .forEach(
