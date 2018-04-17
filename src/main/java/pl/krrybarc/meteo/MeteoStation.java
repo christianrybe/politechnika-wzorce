@@ -4,7 +4,6 @@ import java.util.Collection;
 
 class MeteoStation implements Subject {
 
-    Object thermometer;
     Collection<Observer> observers;
 
     @Override
