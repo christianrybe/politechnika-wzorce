@@ -12,7 +12,11 @@ public abstract class UserService {
     }
 
     public User deleteUser(int id) {
-        //<template-method>
-        return null;
+        User removedUser = users.remove(id);
+        finalizeTasks(id);
+        return removedUser;
     }
+
+    public abstract void finalizeTasks(int userId);
 }
+

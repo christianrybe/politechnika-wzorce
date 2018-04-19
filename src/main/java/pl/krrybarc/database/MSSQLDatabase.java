@@ -1,6 +1,6 @@
 package pl.krrybarc.database;
 
-public class SQLDatabase implements Database {
+public class MSSQLDatabase implements Database {
 
     @Override
     public void save(Object o) {

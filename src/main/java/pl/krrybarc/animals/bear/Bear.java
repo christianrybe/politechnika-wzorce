@@ -5,9 +5,8 @@ import org.joda.time.Duration;
 import pl.krrybarc.animals.Animal;
 import pl.krrybarc.animals.bird.Bird;
 import pl.krrybarc.clock.Clock;
-import pl.krrybarc.clock.DateTimeClock;
 import pl.krrybarc.database.Database;
-import pl.krrybarc.database.SQLDatabase;
+import pl.krrybarc.database.MSSQLDatabase;
 
 
 public abstract class Bear implements Animal {
@@ -20,10 +19,18 @@ public abstract class Bear implements Animal {
     public Bear(int weight) {
         this.weight = weight;
         this.lastMealDate = clock.getCurrentTime();
-        this.database = new SQLDatabase();
+        this.database = new MSSQLDatabase();
     }
 
-    //<dependency-injection>
+    public Bear(int weight, Clock clock) {
+        this(weight);
+        this.clock = clock;
+    }
+
+    public Bear(int weight, Database database) {
+            this(weight);
+            this.database = database;
+        }
 
     @Override
     public boolean isAlive() {
